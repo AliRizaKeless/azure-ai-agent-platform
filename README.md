@@ -44,3 +44,19 @@ API Docs
 
 http://127.0.0.1:8000/docs
 
+## Endpoints
+
+- `GET /` -> basic status
+- `GET /health` -> health check
+- `POST /ask` -> ask AI a question
+
+## Example request
+
+```json
+{
+  "question": "What is Azure?"
+}
+
+Notes
+Docker files are included
+Docker run is pending because local WSL/Docker setup is not ready yet
