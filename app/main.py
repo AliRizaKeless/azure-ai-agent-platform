@@ -13,6 +13,10 @@ class Question(BaseModel):
 def home():
     return {"message": "API is running 🚀"}
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 @app.post("/ask")
 def ask_ai(q: Question):
     response = client.chat.completions.create(
