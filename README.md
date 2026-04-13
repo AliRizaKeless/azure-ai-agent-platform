@@ -1,62 +1,56 @@
-\# Azure AI Agent Platform
-
-
+# Azure AI Agent Platform
 
 This project is a backend AI service built with FastAPI and OpenAI.
 
+## Features
 
+- FastAPI backend
+- AI-powered endpoint (/ask)
+- Health check endpoint (/health)
+- Docker-ready setup
 
-\## Features
+## Use Case
 
+This platform simulates an internal AI service where users can:
 
+- Ask questions
+- Get AI-generated answers
+- Extend into agent-based systems in the future
 
-\- FastAPI backend
+## Tech Stack
 
-\- AI-powered endpoint (/ask)
+- Python
+- FastAPI
+- OpenAI API
+- Docker (setup ready)
 
-\- Docker-ready setup
+## API Endpoints
 
+### GET /
+Basic status check
 
+### GET /health
+Health check endpoint
 
-\## Tech Stack
+### POST /ask
+Ask a question to the AI
 
-
-
-\- Python
-
-\- FastAPI
-
-\- OpenAI API
-
-\- Docker
-
-
-
-\## Run locally
-
-
-
-```bash
-
-uvicorn app.main:app --reload
-
-API Docs
-
-http://127.0.0.1:8000/docs
-
-## Endpoints
-
-- `GET /` -> basic status
-- `GET /health` -> health check
-- `POST /ask` -> ask AI a question
-
-## Example request
+#### Example request:
 
 ```json
 {
   "question": "What is Azure?"
 }
 
+Run Locally
+
+python -m uvicorn app.main:app --reload
+
 Notes
-Docker files are included
-Docker run is pending because local WSL/Docker setup is not ready yet
+
+Docker setup is included but not yet executed due to local environment setup
+Future improvements:
+	Azure deployment
+	Multi-agent system
+	RAG architecture
+
