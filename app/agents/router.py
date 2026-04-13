@@ -3,11 +3,14 @@ from app.agents.weather_agent import get_weather_answer
 
 client = OpenAI()
 
-def route_question(question: str) -> str:
+def route_question(question: str) -> dict:
     user_question = question.lower()
 
     if "weather" in user_question:
-        return get_weather_answer()
+        return {
+            "agent": "weather",
+            "answer": get_weather_answer()
+        }
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
@@ -16,4 +19,7 @@ def route_question(question: str) -> str:
         ]
     )
 
-    return response.choices[0].message.content
+    return {
+        "agent": "ai",
+        "answer": response.choices[0].message.content
+    }

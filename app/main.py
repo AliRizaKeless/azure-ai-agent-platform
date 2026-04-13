@@ -26,11 +26,9 @@ def health():
 def ask_ai(q: Question):
     logger.info(f"Received question: {q.question}")
 
-    answer = route_question(q.question)
+    result = route_question(q.question)
 
-    logger.info(f"Generated answer: {answer}")
+    logger.info(f"Agent used: {result['agent']}")
+    logger.info(f"Generated answer: {result['answer']}")
 
-    return {
-        "answer": answer
-    }
-
+    return result
