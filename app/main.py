@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from openai import OpenAI
+from app.agents.router import route_question
 
 app = FastAPI()
 
@@ -19,22 +20,6 @@ def health():
 
 @app.post("/ask")
 def ask_ai(q: Question):
-    user_question = q.question.lower()
-
-    # simple agent logic
-    if "weather" in user_question:
-        return {
-            "answer": "This would call a weather API in a real system 🌤️"
-        }
-
-    # default: use AI
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "user", "content": q.question}
-        ]
-    )
-
     return {
-        "answer": response.choices[0].message.content
+        "answer": route_question(q.question)
     }
