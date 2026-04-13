@@ -2,6 +2,10 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from openai import OpenAI
 from app.agents.router import route_question
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
@@ -20,6 +24,13 @@ def health():
 
 @app.post("/ask")
 def ask_ai(q: Question):
+    logger.info(f"Received question: {q.question}")
+
+    answer = route_question(q.question)
+
+    logger.info(f"Generated answer: {answer}")
+
     return {
-        "answer": route_question(q.question)
+        "answer": answer
     }
+
