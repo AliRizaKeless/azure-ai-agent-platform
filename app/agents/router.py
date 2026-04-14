@@ -3,6 +3,12 @@ from app.agents.weather_agent import get_weather_answer
 
 client = OpenAI()
 
+def load_knowledge():
+    with open("app/data/knowledge.txt", "r") as f:
+        return f.read()
+
+knowledge_base = load_knowledge()
+
 def route_question(question: str) -> dict:
     user_question = question.lower()
 
@@ -16,7 +22,11 @@ def route_question(question: str) -> dict:
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
-                {"role": "user", "content": question}
+               {
+                    "role": "system",
+                    "content": f"Use the following knowledge when answering:\n{knowledge_base}"
+               },
+               {"role": "user", "content": question}
             ]
         )
 

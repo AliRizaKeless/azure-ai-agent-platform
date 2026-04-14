@@ -1,0 +1,5 @@
+Azure is a cloud computing platform from Microsoft that provides services like computing, storage, networking, and AI.
+
+FastAPI is a modern Python web framework for building APIs quickly and efficiently.
+
+Docker is a containerization platform that allows applications to run consistently across environments.
