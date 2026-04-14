@@ -3,11 +3,29 @@ from app.agents.weather_agent import get_weather_answer
 
 client = OpenAI()
 
+
 def load_knowledge():
-    with open("app/data/knowledge.txt", "r") as f:
+    with open("app/data/knowledge.txt", "r", encoding="utf-8") as f:
         return f.read()
 
+
+def retrieve_relevant_knowledge(question: str, knowledge: str) -> str:
+    question_lower = question.lower()
+
+    sections = knowledge.split("\n\n")
+    for section in sections:
+        if "azure" in question_lower and "[Azure]" in section:
+            return section
+        if "fastapi" in question_lower and "[FastAPI]" in section:
+            return section
+        if "docker" in question_lower and "[Docker]" in section:
+            return section
+
+    return "No specific knowledge found."
+
+
 knowledge_base = load_knowledge()
+
 
 def route_question(question: str) -> dict:
     user_question = question.lower()
@@ -18,15 +36,17 @@ def route_question(question: str) -> dict:
             "answer": get_weather_answer()
         }
 
+    relevant_knowledge = retrieve_relevant_knowledge(question, knowledge_base)
+
     try:
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
-               {
+                {
                     "role": "system",
-                    "content": f"Use the following knowledge when answering:\n{knowledge_base}"
-               },
-               {"role": "user", "content": question}
+                    "content": f"Use the following knowledge when answering:\n{relevant_knowledge}"
+                },
+                {"role": "user", "content": question}
             ]
         )
 
