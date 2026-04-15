@@ -54,3 +54,50 @@ Future improvements:
 	Multi-agent system
 	RAG architecture
 
+
+## Architecture Overview
+
+This project simulates a simple AI platform with agent-based routing and retrieval.
+
+### Components
+
+- **API Layer (FastAPI)**  
+  Handles incoming requests.
+
+- **Agent Router**  
+  Decides which agent should handle the request:
+  - Weather agent
+  - AI agent (OpenAI)
+
+- **Retrieval System (RAG - simplified)**  
+  Selects the most relevant knowledge section based on the user question.
+
+---
+
+## Retrieval Logic
+
+The system uses a simple similarity scoring mechanism:
+
+- Splits knowledge into sections
+- Compares question words with each section
+- Selects the best matching section
+
+This simulates a basic vector search system.
+
+---
+
+## Example Response
+
+```json
+{
+  "agent": "ai",
+  "source": "FastAPI",
+  "answer": "FastAPI is a modern Python web framework..."
+}
+
+Future Improvements
+    Replace keyword scoring with embeddings
+    Add vector database (e.g. Azure AI Search)
+    Implement multi-agent orchestration
+    Deploy to Azure Container Apps
+
