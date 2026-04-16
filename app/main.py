@@ -1,3 +1,4 @@
+import uuid
 from fastapi import FastAPI
 from pydantic import BaseModel
 from openai import OpenAI
@@ -26,9 +27,11 @@ def health():
 def ask_ai(q: Question):
     logger.info(f"Received question: {q.question}")
 
+    request_id = str(uuid.uuid4())
     result = route_question(q.question)
 
     logger.info(f"Agent used: {result['agent']}")
     logger.info(f"Generated answer: {result['answer']}")
 
+    result["request_id"] = request_id
     return result
