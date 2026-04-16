@@ -101,3 +101,13 @@ Future Improvements
     Implement multi-agent orchestration
     Deploy to Azure Container Apps
 
+## Example API Response
+
+```json
+{
+  "agent": "ai",
+  "source": "FastAPI",
+  "score": 2,
+  "answer": "FastAPI is a modern Python web framework...",
+  "request_id": "123e4567-e89b-12d3-a456-426614174000"
+}
