@@ -4,13 +4,17 @@ from pydantic import BaseModel
 from openai import OpenAI
 from app.agents.router import route_question
 import logging
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
-client = OpenAI()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 class Question(BaseModel):
     question: str
