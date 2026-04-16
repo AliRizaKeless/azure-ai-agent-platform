@@ -20,9 +20,13 @@ def retrieve_relevant_knowledge(question: str, knowledge: str) -> dict:
             best_match = section
 
     if best_match:
-        return best_match
+        return {
+            "source": best_match["source"],
+            "content": best_match["content"],
+            "score": best_score
+        }
 
-    return {"source": "None", "content": "No specific knowledge found."}
+    return {"source": "None", "content": "No specific knowledge found.", "score": 0}
 
 knowledge_base = load_knowledge()
 
@@ -54,6 +58,7 @@ def route_question(question: str) -> dict:
         return {
             "agent": "weather",
             "source": "weather_agent",
+            "score": 1,
             "answer": get_weather_answer()
         }
 
@@ -72,9 +77,10 @@ def route_question(question: str) -> dict:
         )
 
         return {
-           "agent": "ai",
-           "source": relevant_knowledge["source"],
-           "answer": response.choices[0].message.content
+            "agent": "ai",
+            "source": relevant_knowledge["source"],
+            "score": relevant_knowledge["score"],
+            "answer": response.choices[0].message.content
         }
 
     except Exception as e:
