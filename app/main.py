@@ -1,3 +1,4 @@
+import time
 import uuid
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -23,6 +24,8 @@ app = FastAPI(
     version="1.0.0"
 )
 
+START_TIME = time.time()
+
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 class Question(BaseModel):
@@ -35,6 +38,11 @@ def home():
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+@app.get("/uptime")
+def uptime():
+    uptime_seconds = int(time.time() - START_TIME)
+    return {"uptime_seconds": uptime_seconds}
 
 @app.post("/ask")
 def ask_ai(q: Question):
