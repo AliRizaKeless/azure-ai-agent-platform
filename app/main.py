@@ -12,6 +12,8 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+APP_NAME = "Azure AI Agent Platform"
+
 app = FastAPI(
     title="Azure AI Agent Platform",
     version="1.0.0"
@@ -24,7 +26,7 @@ class Question(BaseModel):
 
 @app.get("/")
 def home():
-    return {"message": "API is running 🚀"}
+    return {"message": f"{APP_NAME} is running 🚀"}
 
 @app.get("/health")
 def health():
