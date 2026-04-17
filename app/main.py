@@ -12,7 +12,10 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-app = FastAPI()
+app = FastAPI(
+    title="Azure AI Agent Platform",
+    version="1.0.0"
+)
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
