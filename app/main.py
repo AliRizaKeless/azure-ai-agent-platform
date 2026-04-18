@@ -37,7 +37,10 @@ def home():
 
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    return {
+        "status": "ok",
+        "service": "azure-ai-agent-platform"
+    }
 
 @app.get("/uptime")
 def uptime():
