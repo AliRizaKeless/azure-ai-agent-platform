@@ -87,6 +87,6 @@ def route_question(question: str) -> dict:
         return {
             "agent": "system",
             "source": "error_handler",
-            "answer": f"An error occurred while processing the request: {str(e)}"
+            "answer": f"An error occurred while processing the request: {str(e)}",
             "timestamp": "generated at runtime"
         }

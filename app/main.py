@@ -51,6 +51,10 @@ def uptime():
     uptime_seconds = int(time.time() - START_TIME)
     return {"uptime_seconds": uptime_seconds}
 
+@app.get("/version")
+def version():
+    return {"version": "1.0.0"}
+
 @app.post("/ask")
 def ask_ai(q: Question):
     logger.info(f"Received question: {q.question}")
