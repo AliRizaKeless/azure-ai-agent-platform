@@ -3,6 +3,7 @@ import uuid
 from fastapi import FastAPI
 from pydantic import BaseModel
 from openai import OpenAI
+from datetime import datetime
 from app.agents.router import route_question
 import logging
 from dotenv import load_dotenv
@@ -33,7 +34,10 @@ class Question(BaseModel):
 
 @app.get("/")
 def home():
-    return {"message": f"{APP_NAME} is running 🚀"}
+    return {
+        "message": f"{APP_NAME} is running 🚀",
+        "timestamp": datetime.utcnow().isoformat()
+    }
 
 @app.get("/health")
 def health():
