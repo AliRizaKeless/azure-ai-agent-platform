@@ -2,6 +2,12 @@
 
 This project is a backend AI service built with FastAPI and OpenAI.
 
+## Status
+
+- Active Development
+- FastAPI Backend
+- AI + Agent + RAG Prototype
+
 ## Features
 
 - FastAPI backend
