@@ -55,6 +55,13 @@ def uptime():
 def version():
     return {"version": "1.0.0"}
 
+@app.get("/docs-info")
+def docs_info():
+    return {
+        "docs_url": "/docs",
+        "redoc_url": "/redoc"
+    }
+
 @app.post("/ask")
 def ask_ai(q: Question):
     logger.info(f"Received question: {q.question}")
