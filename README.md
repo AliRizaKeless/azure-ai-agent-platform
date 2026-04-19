@@ -117,3 +117,10 @@ Future Improvements
   "answer": "FastAPI is a modern Python web framework...",
   "request_id": "123e4567-e89b-12d3-a456-426614174000"
 }
+
+## Roadmap
+
+- Azure deployment
+- Terraform setup
+- Vector database
+- Frontend UI
