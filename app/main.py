@@ -36,7 +36,8 @@ class Question(BaseModel):
 def home():
     return {
         "message": f"{APP_NAME} is running 🚀",
-        "timestamp": datetime.utcnow().isoformat()
+        "timestamp": datetime.utcnow().isoformat(),
+        "uptime_endpoint": "/uptime"
     }
 
 @app.get("/health")
