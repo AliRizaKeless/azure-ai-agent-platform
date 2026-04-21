@@ -124,3 +124,16 @@ Future Improvements
 - Terraform setup
 - Vector database
 - Frontend UI
+
+## Quick Start
+
+```bash
+python -m uvicorn app.main:app --reload
+
+Open:
+
+/docs
+/health
+/metrics
+
+
