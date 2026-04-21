@@ -135,5 +135,7 @@ Open:
 /docs
 /health
 /metrics
-
+/ping
+/metrics
+/info
 
