@@ -37,7 +37,8 @@ def home():
     return {
         "message": f"{APP_NAME} is running 🚀",
         "timestamp": datetime.utcnow().isoformat(),
-        "uptime_endpoint": "/uptime"
+        "uptime_endpoint": "/uptime",
+        "docs_endpoint": "/docs"
     }
 
 @app.get("/health")
