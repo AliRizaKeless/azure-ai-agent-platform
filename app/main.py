@@ -64,6 +64,13 @@ def docs_info():
         "redoc_url": "/redoc"
     }
 
+@app.get("/metrics")
+def metrics():
+    return {
+        "status": "active",
+        "version": "1.0.0"
+    }
+
 @app.post("/ask")
 def ask_ai(q: Question):
     logger.info(f"Received question: {q.question}")
