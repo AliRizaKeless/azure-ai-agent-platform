@@ -77,6 +77,13 @@ def metrics():
 def ping():
     return {"message": "pong"}
 
+@app.get("/info")
+def info():
+    return {
+        "name": APP_NAME,
+        "type": "AI backend platform"
+    }
+
 @app.post("/ask")
 def ask_ai(q: Question):
     logger.info(f"Received question: {q.question}")
