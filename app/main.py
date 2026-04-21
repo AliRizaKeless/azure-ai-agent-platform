@@ -45,7 +45,8 @@ def health():
     return {
         "status": "ok",
         "service": "azure-ai-agent-platform",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "metrics_endpoint": "/metrics"
     }
 
 @app.get("/uptime")
