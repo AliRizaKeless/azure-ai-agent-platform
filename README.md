@@ -139,3 +139,26 @@ Open:
 /metrics
 /info
 
+## Running with Docker
+
+Build the Docker image:
+
+```bash
+docker build -t azure-ai-agent-platform .
+```
+
+Run the container:
+
+```bash
+docker run --env-file .env -p 8000:8000 azure-ai-agent-platform
+```
+
+Available endpoints:
+
+* http://localhost:8000/docs
+* http://localhost:8000/health
+* http://localhost:8000/metrics
+* http://localhost:8000/version
+* http://localhost:8000/uptime
+
+
