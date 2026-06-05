@@ -161,4 +161,13 @@ Available endpoints:
 * http://localhost:8000/version
 * http://localhost:8000/uptime
 
+## API Metadata
+
+| Property | Value |
+|----------|--------|
+| Framework | FastAPI |
+| AI Model | GPT-4o-mini |
+| Containerized | Yes |
+| Docker Support | Yes |
+| RAG Support | Yes |
 
