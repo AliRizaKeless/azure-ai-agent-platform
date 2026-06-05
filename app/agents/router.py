@@ -1,3 +1,5 @@
+import re
+
 from openai import OpenAI
 from app.agents.weather_agent import get_weather_answer
 
@@ -14,7 +16,13 @@ def retrieve_relevant_knowledge(question: str, knowledge: str) -> dict:
     best_score = -1
 
     for section in parsed_sections:
-        score = score_section(question, section["content"] + " " + section["source"])
+        score = score_section(
+            question,
+            section["content"] + " " + section["source"]
+        )
+
+        print(f"Source: {section['source']} Score: {score}")
+
         if score > best_score:
             best_score = score
             best_match = section
@@ -47,8 +55,8 @@ def parse_knowledge_sections(knowledge: str) -> list[dict]:
     return parsed_sections
 
 def score_section(question: str, content: str) -> int:
-    question_words = set(question.lower().split())
-    content_words = set(content.lower().split())
+    question_words = set(re.findall(r"\w+", question.lower()))
+    content_words = set(re.findall(r"\w+", content.lower()))
     return len(question_words.intersection(content_words))
 
 def route_question(question: str) -> dict:
