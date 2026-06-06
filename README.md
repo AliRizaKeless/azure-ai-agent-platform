@@ -152,6 +152,11 @@ Run the container:
 ```bash
 docker run --env-file .env -p 8000:8000 azure-ai-agent-platform
 ```
+### Container Health Monitoring
+
+The Docker image includes a built-in health check that validates the `/health` endpoint.
+
+This helps ensure that the application is running correctly inside the container.
 
 Available endpoints:
 
