@@ -204,3 +204,14 @@ Next steps:
 Current target platform:
 
 - Azure Container Apps
+
+## Azure Resources
+
+### Resource Group
+- rg-ai-agent-platform
+
+### Azure Container Registry
+- acraliagentplatform.azurecr.io
+
+Deployment target:
+- Azure Container Apps
