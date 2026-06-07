@@ -176,3 +176,18 @@ Available endpoints:
 | Docker Support | Yes |
 | RAG Support | Yes |
 
+## Azure Deployment Preparation
+
+A resource group has been created in Azure as the foundation for deployment.
+
+| Resource | Value |
+|----------|-------|
+| Resource Group | rg-ai-agent-platform |
+| Region | Norway East |
+| Status | Created |
+
+Next steps:
+
+- Create Azure Container Registry
+- Push Docker image to registry
+- Deploy container to Azure Container Apps
