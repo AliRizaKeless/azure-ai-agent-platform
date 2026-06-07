@@ -191,3 +191,16 @@ Next steps:
 - Create Azure Container Registry
 - Push Docker image to registry
 - Deploy container to Azure Container Apps
+
+## Cloud Infrastructure Status
+
+### Azure
+
+- Azure CLI configured
+- Azure subscription connected
+- Resource Group created
+- Container deployment planned
+
+Current target platform:
+
+- Azure Container Apps
