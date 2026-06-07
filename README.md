@@ -215,3 +215,10 @@ Current target platform:
 
 Deployment target:
 - Azure Container Apps
+
+### Container Image
+
+The Docker image has been pushed to Azure Container Registry:
+
+```text
+acraliagentplatform.azurecr.io/azure-ai-agent-platform:v1
