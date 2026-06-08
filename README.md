@@ -222,3 +222,10 @@ The Docker image has been pushed to Azure Container Registry:
 
 ```text
 acraliagentplatform.azurecr.io/azure-ai-agent-platform:v1
+
+### Azure Container Apps Environment
+
+- Name: env-ai-agent-platform
+- Region: Norway East
+- Workload profile: Consumption
+- Status: Created
