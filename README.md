@@ -229,3 +229,10 @@ acraliagentplatform.azurecr.io/azure-ai-agent-platform:v1
 - Region: Norway East
 - Workload profile: Consumption
 - Status: Created
+
+### Runtime Configuration
+
+The deployed Azure Container App uses environment variables for runtime configuration.
+
+- `OPENAI_API_KEY` is configured as an Azure Container App environment variable.
+- Secrets are not stored in the repository.
