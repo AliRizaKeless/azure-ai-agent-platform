@@ -236,3 +236,24 @@ The deployed Azure Container App uses environment variables for runtime configur
 
 - `OPENAI_API_KEY` is configured as an Azure Container App environment variable.
 - Secrets are not stored in the repository.
+
+## Infrastructure as Code (Terraform)
+
+Terraform configuration has been added to manage Azure infrastructure.
+
+Currently defined resources:
+
+- Azure Resource Group
+- Azure Container Registry (ACR)
+
+Current Terraform structure:
+
+terraform/
+├─ main.tf
+├─ variables.tf
+└─ outputs.tf
+
+Planned resources:
+
+- Azure Container Apps Environment
+- Azure Container App
