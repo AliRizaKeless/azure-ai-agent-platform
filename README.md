@@ -257,3 +257,18 @@ Planned resources:
 
 - Azure Container Apps Environment
 - Azure Container App
+
+## Deployment Status
+
+Current deployment stack:
+
+- FastAPI
+- Docker
+- Azure Container Registry (ACR)
+- Azure Container Apps
+
+Application status:
+
+- Containerized
+- Publicly deployed on Azure
+- OpenAI integration enabled
