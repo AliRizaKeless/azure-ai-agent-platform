@@ -272,3 +272,9 @@ Application status:
 - Containerized
 - Publicly deployed on Azure
 - OpenAI integration enabled
+
+## Infrastructure Status
+
+- Resource Group defined in Terraform
+- Container Registry defined in Terraform
+- Azure Container Apps integration in progress
