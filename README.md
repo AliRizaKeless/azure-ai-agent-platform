@@ -278,3 +278,5 @@ Application status:
 - Resource Group defined in Terraform
 - Container Registry defined in Terraform
 - Azure Container Apps integration in progress
+
+Terraform infrastructure definitions are currently under development.
