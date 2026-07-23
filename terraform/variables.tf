@@ -9,3 +9,7 @@ variable "resource_group_name" {
 variable "container_app_environment_name" {
   default = "env-ai-agent-platform"
 }
+
+variable "container_registry_name" {
+  default = "acraliagentplatform"
+}
