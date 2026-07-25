@@ -13,3 +13,7 @@ variable "container_app_environment_name" {
 variable "container_registry_name" {
   default = "acraliagentplatform"
 }
+
+variable "project_name" {
+  default = "azure-ai-agent-platform"
+}
