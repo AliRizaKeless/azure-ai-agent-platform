@@ -13,3 +13,8 @@ output "container_registry_name" {
 output "container_registry_login_server" {
   value = azurerm_container_registry.main.login_server
 }
+
+output "resource_group_id" {
+  description = "Azure Resource Group ID"
+  value       = azurerm_resource_group.main.id
+}
