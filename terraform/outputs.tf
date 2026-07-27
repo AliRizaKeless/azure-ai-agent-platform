@@ -18,3 +18,8 @@ output "resource_group_id" {
   description = "Azure Resource Group ID"
   value       = azurerm_resource_group.main.id
 }
+
+output "container_registry_id" {
+  description = "Azure Container Registry ID"
+  value       = azurerm_container_registry.main.id
+}
