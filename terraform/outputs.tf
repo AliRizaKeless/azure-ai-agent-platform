@@ -1,9 +1,11 @@
 output "resource_group_name" {
-  value = azurerm_resource_group.main.name
+  description = "Azure Resource Group name"
+  value       = azurerm_resource_group.main.name
 }
 
 output "resource_group_location" {
-  value = azurerm_resource_group.main.location
+  description = "Azure Resource Group location"
+  value       = azurerm_resource_group.main.location
 }
 
 output "container_registry_name" {
@@ -11,7 +13,8 @@ output "container_registry_name" {
 }
 
 output "container_registry_login_server" {
-  value = azurerm_container_registry.main.login_server
+  description = "Azure Container Registry login server"
+  value       = azurerm_container_registry.main.login_server
 }
 
 output "resource_group_id" {
@@ -23,3 +26,4 @@ output "container_registry_id" {
   description = "Azure Container Registry ID"
   value       = azurerm_container_registry.main.id
 }
+
