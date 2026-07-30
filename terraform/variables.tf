@@ -17,3 +17,8 @@ variable "container_registry_name" {
 variable "project_name" {
   default = "azure-ai-agent-platform"
 }
+
+variable "container_registry_sku" {
+  description = "Azure Container Registry SKU"
+  default     = "Basic"
+}
