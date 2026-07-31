@@ -1,9 +1,11 @@
 variable "location" {
-  default = "norwayeast"
+  description = "Azure deployment region"
+  default     = "norwayeast"
 }
 
 variable "resource_group_name" {
-  default = "rg-ai-agent-platform"
+  description = "Azure Resource Group name"
+  default     = "rg-ai-agent-platform"
 }
 
 variable "container_app_environment_name" {
@@ -15,7 +17,8 @@ variable "container_registry_name" {
 }
 
 variable "project_name" {
-  default = "azure-ai-agent-platform"
+  description = "Project name used for Azure resources"
+  default     = "azure-ai-agent-platform"
 }
 
 variable "container_registry_sku" {
