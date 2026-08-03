@@ -18,12 +18,12 @@ output "container_registry_login_server" {
 }
 
 output "resource_group_id" {
-  description = "Azure Resource Group ID"
+  description = "Azure Resource Group resource ID"
   value       = azurerm_resource_group.main.id
 }
 
 output "container_registry_id" {
-  description = "Azure Container Registry ID"
+  description = "Azure Container Registry resource ID"
   value       = azurerm_container_registry.main.id
 }
 
