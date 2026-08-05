@@ -19,6 +19,11 @@ variable "container_registry_name" {
 variable "project_name" {
   description = "Project name used for Azure resources"
   default     = "azure-ai-agent-platform"
+
+  validation {
+    condition     = length(var.project_name) > 0
+    error_message = "Project name cannot be empty."
+  }
 }
 
 variable "container_registry_sku" {
