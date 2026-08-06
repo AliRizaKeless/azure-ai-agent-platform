@@ -1,6 +1,11 @@
 variable "location" {
   description = "Azure deployment region"
   default     = "norwayeast"
+
+  validation {
+    condition     = contains(["norwayeast", "westeurope"], var.location)
+    error_message = "Location must be either 'norwayeast' or 'westeurope'."
+  }
 }
 
 variable "resource_group_name" {
