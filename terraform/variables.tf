@@ -21,6 +21,12 @@ variable "container_registry_name" {
   default = "acraliagentplatform"
 }
 
+variable "container_registry_admin_enabled" {
+  description = "Enable admin user for Azure Container Registry"
+  type        = bool
+  default     = true
+}
+
 variable "project_name" {
   description = "Project name used for Azure resources"
   default     = "azure-ai-agent-platform"
