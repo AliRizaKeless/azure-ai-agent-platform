@@ -1,5 +1,6 @@
 variable "location" {
   description = "Azure deployment region"
+  type        = string
   default     = "norwayeast"
 
   validation {
@@ -10,6 +11,7 @@ variable "location" {
 
 variable "resource_group_name" {
   description = "Azure Resource Group name"
+  type        = string
   default     = "rg-ai-agent-platform"
 }
 
