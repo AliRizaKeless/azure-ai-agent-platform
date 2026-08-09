@@ -13,6 +13,11 @@ variable "resource_group_name" {
   description = "Azure Resource Group name"
   type        = string
   default     = "rg-ai-agent-platform"
+
+  validation {
+    condition     = length(trimspace(var.resource_group_name)) > 0
+    error_message = "Resource Group name cannot be empty."
+  }
 }
 
 variable "container_app_environment_name" {
