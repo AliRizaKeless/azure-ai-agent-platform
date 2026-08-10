@@ -25,7 +25,14 @@ variable "container_app_environment_name" {
 }
 
 variable "container_registry_name" {
-  default = "acraliagentplatform"
+  description = "Azure Container Registry name"
+  type        = string
+  default     = "acraliagentplatform"
+
+  validation {
+    condition     = can(regex("^[a-zA-Z0-9]{5,50}$", var.container_registry_name))
+    error_message = "Container Registry name must be 5-50 alphanumeric characters."
+  }
 }
 
 variable "container_registry_admin_enabled" {
