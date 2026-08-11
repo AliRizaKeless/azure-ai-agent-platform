@@ -43,6 +43,7 @@ variable "container_registry_admin_enabled" {
 
 variable "project_name" {
   description = "Project name used for Azure resources"
+  type        = string
   default     = "azure-ai-agent-platform"
 
   validation {
