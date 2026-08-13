@@ -2,6 +2,7 @@ variable "location" {
   description = "Azure deployment region"
   type        = string
   default     = "norwayeast"
+  nullable    = false
 
   validation {
     condition     = contains(["norwayeast", "westeurope"], var.location)
