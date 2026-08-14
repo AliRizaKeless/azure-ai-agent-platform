@@ -14,6 +14,7 @@ variable "resource_group_name" {
   description = "Azure Resource Group name"
   type        = string
   default     = "rg-ai-agent-platform"
+  nullable    = false
 
   validation {
     condition     = length(trimspace(var.resource_group_name)) > 0
