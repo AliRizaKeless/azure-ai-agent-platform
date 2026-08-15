@@ -30,6 +30,7 @@ variable "container_registry_name" {
   description = "Azure Container Registry name"
   type        = string
   default     = "acraliagentplatform"
+  nullable    = false
 
   validation {
     condition     = can(regex("^[a-zA-Z0-9]{5,50}$", var.container_registry_name))
