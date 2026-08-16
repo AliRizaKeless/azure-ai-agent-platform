@@ -48,6 +48,7 @@ variable "project_name" {
   description = "Project name used for Azure resources"
   type        = string
   default     = "azure-ai-agent-platform"
+  nullable    = false
 
   validation {
     condition     = length(var.project_name) > 0
