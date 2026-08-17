@@ -59,6 +59,7 @@ variable "project_name" {
 variable "container_registry_sku" {
   description = "Azure Container Registry SKU"
   default     = "Basic"
+  nullable    = false
 
   validation {
     condition     = contains(["Basic", "Standard", "Premium"], var.container_registry_sku)
