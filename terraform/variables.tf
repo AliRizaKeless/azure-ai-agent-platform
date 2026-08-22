@@ -42,6 +42,7 @@ variable "container_registry_admin_enabled" {
   description = "Enable admin user for Azure Container Registry"
   type        = bool
   default     = true
+  sensitive   = false
 }
 
 variable "project_name" {
