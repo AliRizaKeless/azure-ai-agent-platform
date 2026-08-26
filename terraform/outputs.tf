@@ -4,7 +4,7 @@ output "resource_group_name" {
 }
 
 output "resource_group_location" {
-  description = "Azure Resource Group location"
+  description = "Azure region where the Resource Group is deployed"
   value       = azurerm_resource_group.main.location
 }
 
