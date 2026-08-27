@@ -29,4 +29,9 @@ resource "azurerm_container_registry" "main" {
   location            = azurerm_resource_group.main.location
   sku                 = var.container_registry_sku
   admin_enabled       = var.container_registry_admin_enabled
+
+  tags = {
+    Project   = var.project_name
+    ManagedBy = "Terraform"
+  }
 }
