@@ -31,7 +31,8 @@ resource "azurerm_container_registry" "main" {
   admin_enabled       = var.container_registry_admin_enabled
 
   tags = {
-    Project   = var.project_name
-    ManagedBy = "Terraform"
+    Project     = var.project_name
+    Environment = var.environment
+    ManagedBy   = "Terraform"
   }
 }

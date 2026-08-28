@@ -57,6 +57,12 @@ variable "project_name" {
   }
 }
 
+variable "environment" {
+  description = "Deployment environment"
+  type        = string
+  default     = "dev"
+}
+
 variable "container_registry_sku" {
   description = "Azure Container Registry SKU"
   default     = "Basic"
