@@ -28,3 +28,8 @@ output "container_registry_id" {
   value       = azurerm_container_registry.main.id
 }
 
+output "environment" {
+  description = "Deployment environment for Azure resources"
+  value       = var.environment
+}
+
