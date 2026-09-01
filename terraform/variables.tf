@@ -52,7 +52,7 @@ variable "project_name" {
   nullable    = false
 
   validation {
-    condition     = length(var.project_name) > 0
+    condition     = length(trimspace(var.project_name)) > 0
     error_message = "Project name cannot be empty."
   }
 }
