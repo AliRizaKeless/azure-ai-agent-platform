@@ -280,3 +280,9 @@ Application status:
 - Azure Container Apps integration in progress
 
 Terraform infrastructure definitions are currently under development.
+
+### Validate Terraform configuration
+
+```bash
+terraform fmt -check terraform
+terraform -chdir=terraform validate
