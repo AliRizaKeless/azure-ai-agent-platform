@@ -8,5 +8,7 @@ __pycache__/
 *.tfstate.*
 .terraform.tfstate.lock.info
 crash.log
+# Terraform plan files
+*.tfplan
 
 # Keep .terraform.lock.hcl committed for reproducible provider versions
