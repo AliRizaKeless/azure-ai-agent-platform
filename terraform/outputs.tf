@@ -16,6 +16,7 @@ output "container_registry_name" {
 output "container_registry_login_server" {
   description = "Azure Container Registry login server"
   value       = azurerm_container_registry.main.login_server
+  sensitive   = false
 }
 
 output "resource_group_id" {
