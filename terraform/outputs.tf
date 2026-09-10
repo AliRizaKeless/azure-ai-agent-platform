@@ -32,6 +32,7 @@ output "container_registry_id" {
 output "environment" {
   description = "Deployment environment for Azure resources"
   value       = var.environment
+  sensitive   = false
 }
 
 output "project_name" {
