@@ -1,11 +1,6 @@
 terraform {
   required_version = ">= 1.5, < 2.0"
 
-  # Configure the Azure Resource Manager provider
-  provider "azurerm" {
-    features {}
-  }
-
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -14,6 +9,7 @@ terraform {
   }
 }
 
+# Configure the Azure Resource Manager provider
 provider "azurerm" {
   features {}
 }
