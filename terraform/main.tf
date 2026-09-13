@@ -19,8 +19,9 @@ resource "azurerm_resource_group" "main" {
   location = var.location
 
   tags = {
-    Project   = var.project_name
-    ManagedBy = "Terraform"
+    Project     = var.project_name
+    Environment = var.environment
+    ManagedBy   = "Terraform"
   }
 }
 
