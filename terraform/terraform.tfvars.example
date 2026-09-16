@@ -3,3 +3,4 @@ resource_group_name     = "rg-ai-agent-platform"
 container_registry_name = "acraliagentplatform"
 environment             = "dev"
 container_registry_sku = "Basic"
+container_registry_admin_enabled = true
