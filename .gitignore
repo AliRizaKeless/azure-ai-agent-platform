@@ -11,4 +11,4 @@ crash.log
 # Terraform plan files
 *.tfplan
 
-# Keep .terraform.lock.hcl committed for reproducible provider versions
+# Keep .terraform.lock.hcl committed for reproducible provider versionscrash.*.log
