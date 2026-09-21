@@ -286,3 +286,4 @@ Terraform infrastructure definitions are currently under development.
 ```bash
 terraform fmt -check terraform
 terraform -chdir=terraform validate
+> Terraform files should be formatted with `terraform fmt terraform` before committing changes.
