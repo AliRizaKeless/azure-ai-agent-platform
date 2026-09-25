@@ -22,7 +22,8 @@ APP_NAME = "Azure AI Agent Platform"
 
 app = FastAPI(
     title="Azure AI Agent Platform",
-    version="1.0.0"
+    version="1.0.0",
+    description="AI agent platform with routing, retrieval, and external tool integration.",
 )
 
 START_TIME = time.time()
