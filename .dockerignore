@@ -2,3 +2,7 @@
 __pycache__
 .git
 .gitignore
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
