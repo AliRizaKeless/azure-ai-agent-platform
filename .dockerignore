@@ -10,3 +10,4 @@ terraform/*.tfstate.*
 .github/
 README.md
 .pytest_cache/
+.coverage
