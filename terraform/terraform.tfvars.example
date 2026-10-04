@@ -1,4 +1,5 @@
 # Example values for local Terraform deployments
+# Copy this file to terraform.tfvars and customize the values as needed
 # Do not store secrets or credentials in this file
 # Example values for local Terraform deployments 
 location = "norwayeast" 
