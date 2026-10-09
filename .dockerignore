@@ -12,3 +12,4 @@ README.md
 .pytest_cache/
 .coverage
 tests/
+terraform/
