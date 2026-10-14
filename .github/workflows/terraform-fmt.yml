@@ -1,3 +1,5 @@
+permissions: read-all
+
 name: Terraform Format Check
 
 on:
@@ -19,3 +21,4 @@ jobs:
       - run: terraform fmt -check -recursive terraform
       - run: terraform -chdir=terraform init -backend=false
       - run: terraform -chdir=terraform validate
+
