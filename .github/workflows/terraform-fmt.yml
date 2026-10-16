@@ -2,7 +2,8 @@ concurrency:
   group: terraform-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-permissions: read-all
+permissions:
+  contents: read
 
 name: Terraform Format Check
 
@@ -25,5 +26,6 @@ jobs:
       - run: terraform fmt -check -recursive terraform
       - run: terraform -chdir=terraform init -backend=false
       - run: terraform -chdir=terraform validate
+
 
 
