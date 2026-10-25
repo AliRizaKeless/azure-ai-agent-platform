@@ -31,6 +31,8 @@ jobs:
       - run: test -f requirements.txt
       - run: pip install -r requirements.txt
       - run: pip check
+      - run: pip list --format=columns
+
 
 
 
