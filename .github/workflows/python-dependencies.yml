@@ -10,10 +10,12 @@ on:
     paths:
       - "requirements.txt"
       - "app/**/*.py"
+      - "tests/**/*.py"
   pull_request:
     paths:
       - "requirements.txt"
       - "app/**/*.py"
+      - "tests/**/*.py"
 
 permissions:
   contents: read
@@ -36,6 +38,7 @@ jobs:
       - run: pip install -r requirements.txt
       - run: pip check
       - run: pip list --format=columns
+
 
 
 
