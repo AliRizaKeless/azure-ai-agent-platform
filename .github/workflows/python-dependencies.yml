@@ -11,11 +11,13 @@ on:
       - "requirements.txt"
       - "app/**/*.py"
       - "tests/**/*.py"
+      - ".github/workflows/python-dependencies.yml"
   pull_request:
     paths:
       - "requirements.txt"
       - "app/**/*.py"
       - "tests/**/*.py"
+      - ".github/workflows/python-dependencies.yml"
 
 permissions:
   contents: read
@@ -38,6 +40,7 @@ jobs:
       - run: pip install -r requirements.txt
       - run: pip check
       - run: pip list --format=columns
+
 
 
 
