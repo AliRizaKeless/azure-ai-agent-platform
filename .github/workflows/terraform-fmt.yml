@@ -11,10 +11,12 @@ on:
   push:
     paths:
       - "terraform/**/*.tf"
+      - "terraform/.terraform.lock.hcl"
       - ".github/workflows/terraform-fmt.yml"
   pull_request:
     paths:
       - "terraform/**/*.tf"
+      - "terraform/.terraform.lock.hcl"
       - ".github/workflows/terraform-fmt.yml"
   workflow_dispatch:
 
@@ -28,6 +30,7 @@ jobs:
       - run: terraform fmt -check -recursive terraform
       - run: terraform -chdir=terraform init -backend=false
       - run: terraform -chdir=terraform validate
+
 
 
 
