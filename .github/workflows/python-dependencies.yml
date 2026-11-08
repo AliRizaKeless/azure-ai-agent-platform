@@ -45,20 +45,7 @@ jobs:
       - name: Confirm security audit passed
         run: echo "Security audit completed successfully"
       - run: pip list --format=columns
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      - name: Report security audit failure
+        if: failure()
+        run: echo "Security audit failed - check workflow logs." >> "$GITHUB_STEP_SUMMARY"
 
