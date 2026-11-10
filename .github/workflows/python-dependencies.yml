@@ -49,5 +49,7 @@ jobs:
       - name: Report security audit failure
         if: ${{ failure() && steps.security_audit.outcome == 'failure' }}
         run: echo "Security audit failed - check workflow logs." >> "$GITHUB_STEP_SUMMARY"
-
+      - name: Report security audit success
+        if: ${{ steps.security_audit.outcome == 'success' }}
+        run: echo "Python dependency security audit passed." >> "$GITHUB_STEP_SUMMARY"
 
