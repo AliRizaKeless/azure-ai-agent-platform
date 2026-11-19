@@ -14,7 +14,8 @@ updates:
       - automated
     commit-message:
       prefix: "ci"
-
-
-
+    groups:
+      github-actions:
+        patterns:
+          - "*"
 
