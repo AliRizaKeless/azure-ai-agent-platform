@@ -9,12 +9,14 @@ on:
   push:
     paths:
       - "requirements.txt"
+      - "Dockerfile"
       - "app/**/*.py"
       - "tests/**/*.py"
       - ".github/workflows/python-dependencies.yml"
   pull_request:
     paths:
       - "requirements.txt"
+      - "Dockerfile"
       - "app/**/*.py"
       - "tests/**/*.py"
       - ".github/workflows/python-dependencies.yml"
@@ -52,4 +54,5 @@ jobs:
       - name: Report security audit success
         if: ${{ steps.security_audit.outcome == 'success' }}
         run: echo "Python dependency security audit passed." >> "$GITHUB_STEP_SUMMARY"
+
 
